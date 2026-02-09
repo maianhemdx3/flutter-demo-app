@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   app:
-    image: nginx:alpine
-    ports:
-      - "80:80"
+    image: ubuntu:24.04
+    container_name: ubuntu2404
+    tty: true
+    stdin_open: true
