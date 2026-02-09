@@ -3,24 +3,5 @@ version: "3.8"
 services:
   app:
     image: ubuntu:22.04
-    container_name: ubuntu-nginx
     ports:
-      - "8080:80"
-    labels:
-      shipyard.route: "/"
-    command: >
-      bash -c "
-      apt update &&
-      apt install -y curl git nginx &&
-      
-      # Cài Node.js 20 LTS
-      curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&
-      apt install -y nodejs &&
-      
-      # Check version cho chắc
-      node -v &&
-      npm -v &&
-      git --version &&
-      
-      nginx -g 'daemon off;'
-      "
+      - "80:80"
